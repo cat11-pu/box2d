@@ -30,6 +30,7 @@ extern int BitSetTest( void );
 extern int ChainTest( void );
 extern int CollisionTest( void );
 extern int ContainerTest( void );
+extern int ContinuousTest( void );
 extern int DeterminismTest( void );
 extern int DistanceTest( void );
 extern int DynamicTreeTest( void );
@@ -109,6 +110,7 @@ int main( int argc, char** argv )
 	MAYBE_RUN_TEST( ChainTest );
 	MAYBE_RUN_TEST( CollisionTest );
 	MAYBE_RUN_TEST( ContainerTest );
+	MAYBE_RUN_TEST( ContinuousTest );
 	MAYBE_RUN_TEST( DeterminismTest );
 	MAYBE_RUN_TEST( DistanceTest );
 	MAYBE_RUN_TEST( DynamicTreeTest );

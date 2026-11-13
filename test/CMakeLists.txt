@@ -6,6 +6,7 @@ set(BOX2D_TEST_FILES
     test_chain.c
     test_collision.c
     test_container.c
+    test_continuous.c
     test_determinism.c
     test_distance.c
     test_dynamic_tree.c
