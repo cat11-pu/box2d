@@ -26,8 +26,12 @@
 #include <string.h>
 
 // these are useful for solver testing
+#ifndef ITERATIONS
 #define ITERATIONS 1
+#endif
+#ifndef RELAX_ITERATIONS
 #define RELAX_ITERATIONS 1
+#endif
 
 typedef struct b2WorkerContext
 {

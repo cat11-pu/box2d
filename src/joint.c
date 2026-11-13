@@ -1486,7 +1486,10 @@ float b2Joint_GetTorqueThreshold( b2JointId jointId )
 void b2PrepareJoint( b2JointSim* joint, b2StepContext* context )
 {
 	// Clamp joint hertz based on the time step to reduce jitter.
-	float hertz = b2MinFloat( joint->constraintHertz, 0.25f * context->inv_h );
+#ifndef B2_HERTZ_CLAMP
+#define B2_HERTZ_CLAMP 0.25f
+#endif
+	float hertz = b2MinFloat( joint->constraintHertz, B2_HERTZ_CLAMP * context->inv_h );
 	joint->constraintSoftness = b2MakeSoft( hertz, joint->constraintDampingRatio, context->h );
 
 	switch ( joint->type )
