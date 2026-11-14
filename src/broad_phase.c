@@ -38,6 +38,9 @@ void b2CreateBroadPhase( b2BroadPhase* bp, const b2Capacity* capacity )
 	b2CreateDynamicTreeInternal( bp->trees + b2_dynamicBody, dynamicCapacity );
 
 	bp->movedSiblings = NULL;
+
+	// No static proxies exist yet, so the first pair update bulk builds the static tree.
+	bp->staticTreeNeedsBulkBuild = true;
 }
 
 void b2DestroyBroadPhase( b2BroadPhase* bp )
@@ -611,6 +614,25 @@ void b2UpdateBroadPhasePairs( b2World* world )
 	for ( int i = 0; i < world->workerCount; ++i )
 	{
 		b2Array_Clear( world->taskContexts.data[i].pairKeys );
+	}
+
+	// Bulk build the static hierarchy once, after all the scene's static proxies have been
+	// inserted. This is the deferred form of bulk insertion: proxy keys are unchanged and the
+	// moved flags are preserved below, so generated pairs are identical to the serial tree.
+	if ( bp->staticTreeNeedsBulkBuild )
+	{
+		b2DynamicTree* staticTree = bp->trees + b2_staticBody;
+		int movedCapacity = b2MaxInt( b2DynamicTree_GetProxyCount( staticTree ), 1 );
+		int* movedProxies = b2StackAlloc( alloc, movedCapacity * sizeof( int ), "static moved" );
+		int movedCount = b2DynamicTree_GatherMovedProxies( staticTree, movedProxies );
+
+		b2DynamicTree_BulkRebuild( staticTree );
+		for ( int i = 0; i < movedCount; ++i )
+		{
+			b2DynamicTree_MarkProxyMovedSerial( staticTree, movedProxies[i] );
+		}
+		b2StackFree( alloc, movedProxies );
+		bp->staticTreeNeedsBulkBuild = false;
 	}
 
 	// Generate pairs by querying the dynamic body tree against itself and against

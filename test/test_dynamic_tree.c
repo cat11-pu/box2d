@@ -1221,6 +1221,106 @@ static int TreeStaleAfterInsertRemoveTest( void )
 	return 0;
 }
 
+static int TreeBulkCreateTest( void )
+{
+	const int count = TREE_TEST_PROXY_COUNT;
+
+	b2AABB* boxes = b2Alloc( count * sizeof( b2AABB ) );
+	int* bulkIds = b2Alloc( count * sizeof( int ) );
+	int* serialIds = b2Alloc( count * sizeof( int ) );
+
+	uint32_t state = 987654321u;
+	for ( int i = 0; i < count; ++i )
+	{
+		state ^= state << 13;
+		state ^= state >> 17;
+		state ^= state << 5;
+		float x = (float)( state % 2000 ) * 0.1f - 100.0f;
+		state ^= state << 13;
+		state ^= state >> 17;
+		state ^= state << 5;
+		float y = (float)( state % 2000 ) * 0.1f - 100.0f;
+		boxes[i].lowerBound.x = x;
+		boxes[i].lowerBound.y = y;
+		boxes[i].upperBound.x = x + 0.5f;
+		boxes[i].upperBound.y = y + 0.5f;
+	}
+
+	// Bulk tree: one bottom-up build, proxy ids in input order.
+	b2DynamicTree bulk;
+	b2CreateDynamicTreeInternal( &bulk, count );
+	b2DynamicTree_BulkCreate( &bulk, boxes, count, bulkIds );
+	ENSURE( bulk.proxyCount == count );
+	for ( int i = 0; i < count; ++i )
+	{
+		ENSURE( bulkIds[i] == i );
+		ENSURE( b2DynamicTree_GetUserData( &bulk, i ) == (uint64_t)i );
+	}
+	b2DynamicTree_Validate( &bulk );
+
+	// Serial tree: one insertion at a time.
+	b2DynamicTree serial;
+	b2CreateDynamicTreeInternal( &serial, count );
+	for ( int i = 0; i < count; ++i )
+	{
+		serialIds[i] = b2CreateTreeProxyInternal( &serial, boxes[i], 1, (uint64_t)i, false );
+		ENSURE( serialIds[i] == i );
+	}
+	b2DynamicTree_Validate( &serial );
+
+	// The exact overlap set must match for a deterministic spread of query boxes.
+	state = 55555u;
+	for ( int q = 0; q < 200; ++q )
+	{
+		state ^= state << 13;
+		state ^= state >> 17;
+		state ^= state << 5;
+		float x = (float)( state % 2000 ) * 0.1f - 100.0f;
+		state ^= state << 13;
+		state ^= state >> 17;
+		state ^= state << 5;
+		float y = (float)( state % 2000 ) * 0.1f - 100.0f;
+		b2AABB query = {
+			.lowerBound = { x, y },
+			.upperBound = { x + 3.0f, y + 3.0f },
+		};
+
+		TreeHitSet bulkHits = { 0 };
+		TreeHitSet serialHits = { 0 };
+		b2DynamicTree_OverlapAABB( &bulk, query, B2_DEFAULT_MASK_BITS, CollectHitCallback, &bulkHits );
+		b2DynamicTree_OverlapAABB( &serial, query, B2_DEFAULT_MASK_BITS, CollectHitCallback, &serialHits );
+		ENSURE( bulkHits.count == serialHits.count );
+		ENSURE( bulkHits.bad == false && serialHits.bad == false );
+		for ( int proxyId = 0; proxyId < count; ++proxyId )
+		{
+			ENSURE( bulkHits.hit[proxyId] == serialHits.hit[proxyId] );
+		}
+	}
+
+	// The bulk hierarchy must be no taller than the serial one for the same boxes.
+	ENSURE( b2DynamicTree_GetHeight( &bulk ) <= b2DynamicTree_GetHeight( &serial ) );
+
+	// Marking and refitting must keep the bulk tree valid and contained.
+	for ( int i = 0; i < count; ++i )
+	{
+		b2DynamicTree_MarkProxyMovedSerial( &bulk, bulkIds[i] );
+	}
+	b2DynamicTree_Refit( &bulk );
+	b2DynamicTree_Validate( &bulk );
+	b2DynamicTree_BulkRebuild( &bulk );
+	b2DynamicTree_Validate( &bulk );
+	ENSURE( bulk.proxyCount == count );
+
+	b2DestroyDynamicTreeInternal( &bulk );
+	b2DestroyDynamicTreeInternal( &serial );
+
+	b2Free( boxes, count * sizeof( b2AABB ) );
+	b2Free( bulkIds, count * sizeof( int ) );
+	b2Free( serialIds, count * sizeof( int ) );
+
+	return 0;
+}
+
 int DynamicTreeTest( void )
 {
 	RUN_SUBTEST( TreeCreateDestroy );
@@ -1239,6 +1339,7 @@ int DynamicTreeTest( void )
 	RUN_SUBTEST( TreeMarkAndRefitTest );
 	RUN_SUBTEST( TreeDfsOrderTest );
 	RUN_SUBTEST( TreeStaleAfterInsertRemoveTest );
+	RUN_SUBTEST( TreeBulkCreateTest );
 
 	// todo test queries versus brute force
 

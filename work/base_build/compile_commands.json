@@ -1,0 +1,266 @@
+[
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/aabb.c.o -c /home/cat/gsb/uid3550/src/aabb.c",
+  "file": "/home/cat/gsb/uid3550/src/aabb.c",
+  "output": "src/CMakeFiles/box2d.dir/aabb.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/arena_allocator.c.o -c /home/cat/gsb/uid3550/src/arena_allocator.c",
+  "file": "/home/cat/gsb/uid3550/src/arena_allocator.c",
+  "output": "src/CMakeFiles/box2d.dir/arena_allocator.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/bitset.c.o -c /home/cat/gsb/uid3550/src/bitset.c",
+  "file": "/home/cat/gsb/uid3550/src/bitset.c",
+  "output": "src/CMakeFiles/box2d.dir/bitset.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/body.c.o -c /home/cat/gsb/uid3550/src/body.c",
+  "file": "/home/cat/gsb/uid3550/src/body.c",
+  "output": "src/CMakeFiles/box2d.dir/body.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/broad_phase.c.o -c /home/cat/gsb/uid3550/src/broad_phase.c",
+  "file": "/home/cat/gsb/uid3550/src/broad_phase.c",
+  "output": "src/CMakeFiles/box2d.dir/broad_phase.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/chain_builder.c.o -c /home/cat/gsb/uid3550/src/chain_builder.c",
+  "file": "/home/cat/gsb/uid3550/src/chain_builder.c",
+  "output": "src/CMakeFiles/box2d.dir/chain_builder.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/constraint_graph.c.o -c /home/cat/gsb/uid3550/src/constraint_graph.c",
+  "file": "/home/cat/gsb/uid3550/src/constraint_graph.c",
+  "output": "src/CMakeFiles/box2d.dir/constraint_graph.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/contact_solver.c.o -c /home/cat/gsb/uid3550/src/contact_solver.c",
+  "file": "/home/cat/gsb/uid3550/src/contact_solver.c",
+  "output": "src/CMakeFiles/box2d.dir/contact_solver.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/contact_solver_w4.c.o -c /home/cat/gsb/uid3550/src/contact_solver_w4.c",
+  "file": "/home/cat/gsb/uid3550/src/contact_solver_w4.c",
+  "output": "src/CMakeFiles/box2d.dir/contact_solver_w4.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/contact_solver_w8.c.o -c /home/cat/gsb/uid3550/src/contact_solver_w8.c",
+  "file": "/home/cat/gsb/uid3550/src/contact_solver_w8.c",
+  "output": "src/CMakeFiles/box2d.dir/contact_solver_w8.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/contact.c.o -c /home/cat/gsb/uid3550/src/contact.c",
+  "file": "/home/cat/gsb/uid3550/src/contact.c",
+  "output": "src/CMakeFiles/box2d.dir/contact.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/core.c.o -c /home/cat/gsb/uid3550/src/core.c",
+  "file": "/home/cat/gsb/uid3550/src/core.c",
+  "output": "src/CMakeFiles/box2d.dir/core.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/distance_joint.c.o -c /home/cat/gsb/uid3550/src/distance_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/distance_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/distance_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/distance.c.o -c /home/cat/gsb/uid3550/src/distance.c",
+  "file": "/home/cat/gsb/uid3550/src/distance.c",
+  "output": "src/CMakeFiles/box2d.dir/distance.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/dynamic_tree.c.o -c /home/cat/gsb/uid3550/src/dynamic_tree.c",
+  "file": "/home/cat/gsb/uid3550/src/dynamic_tree.c",
+  "output": "src/CMakeFiles/box2d.dir/dynamic_tree.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/geometry.c.o -c /home/cat/gsb/uid3550/src/geometry.c",
+  "file": "/home/cat/gsb/uid3550/src/geometry.c",
+  "output": "src/CMakeFiles/box2d.dir/geometry.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/hull.c.o -c /home/cat/gsb/uid3550/src/hull.c",
+  "file": "/home/cat/gsb/uid3550/src/hull.c",
+  "output": "src/CMakeFiles/box2d.dir/hull.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/id_pool.c.o -c /home/cat/gsb/uid3550/src/id_pool.c",
+  "file": "/home/cat/gsb/uid3550/src/id_pool.c",
+  "output": "src/CMakeFiles/box2d.dir/id_pool.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/island.c.o -c /home/cat/gsb/uid3550/src/island.c",
+  "file": "/home/cat/gsb/uid3550/src/island.c",
+  "output": "src/CMakeFiles/box2d.dir/island.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/joint.c.o -c /home/cat/gsb/uid3550/src/joint.c",
+  "file": "/home/cat/gsb/uid3550/src/joint.c",
+  "output": "src/CMakeFiles/box2d.dir/joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/manifold.c.o -c /home/cat/gsb/uid3550/src/manifold.c",
+  "file": "/home/cat/gsb/uid3550/src/manifold.c",
+  "output": "src/CMakeFiles/box2d.dir/manifold.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/math_functions.c.o -c /home/cat/gsb/uid3550/src/math_functions.c",
+  "file": "/home/cat/gsb/uid3550/src/math_functions.c",
+  "output": "src/CMakeFiles/box2d.dir/math_functions.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/motor_joint.c.o -c /home/cat/gsb/uid3550/src/motor_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/motor_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/motor_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/mover_joint.c.o -c /home/cat/gsb/uid3550/src/mover_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/mover_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/mover_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/mover.c.o -c /home/cat/gsb/uid3550/src/mover.c",
+  "file": "/home/cat/gsb/uid3550/src/mover.c",
+  "output": "src/CMakeFiles/box2d.dir/mover.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/parallel_for.c.o -c /home/cat/gsb/uid3550/src/parallel_for.c",
+  "file": "/home/cat/gsb/uid3550/src/parallel_for.c",
+  "output": "src/CMakeFiles/box2d.dir/parallel_for.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/physics_world.c.o -c /home/cat/gsb/uid3550/src/physics_world.c",
+  "file": "/home/cat/gsb/uid3550/src/physics_world.c",
+  "output": "src/CMakeFiles/box2d.dir/physics_world.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/pogo_joint.c.o -c /home/cat/gsb/uid3550/src/pogo_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/pogo_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/pogo_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/prismatic_joint.c.o -c /home/cat/gsb/uid3550/src/prismatic_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/prismatic_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/prismatic_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/recording.c.o -c /home/cat/gsb/uid3550/src/recording.c",
+  "file": "/home/cat/gsb/uid3550/src/recording.c",
+  "output": "src/CMakeFiles/box2d.dir/recording.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/replay.c.o -c /home/cat/gsb/uid3550/src/replay.c",
+  "file": "/home/cat/gsb/uid3550/src/replay.c",
+  "output": "src/CMakeFiles/box2d.dir/replay.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/revolute_joint.c.o -c /home/cat/gsb/uid3550/src/revolute_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/revolute_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/revolute_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/scheduler.c.o -c /home/cat/gsb/uid3550/src/scheduler.c",
+  "file": "/home/cat/gsb/uid3550/src/scheduler.c",
+  "output": "src/CMakeFiles/box2d.dir/scheduler.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/sensor.c.o -c /home/cat/gsb/uid3550/src/sensor.c",
+  "file": "/home/cat/gsb/uid3550/src/sensor.c",
+  "output": "src/CMakeFiles/box2d.dir/sensor.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/shape.c.o -c /home/cat/gsb/uid3550/src/shape.c",
+  "file": "/home/cat/gsb/uid3550/src/shape.c",
+  "output": "src/CMakeFiles/box2d.dir/shape.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/simd.c.o -c /home/cat/gsb/uid3550/src/simd.c",
+  "file": "/home/cat/gsb/uid3550/src/simd.c",
+  "output": "src/CMakeFiles/box2d.dir/simd.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/snapshot.c.o -c /home/cat/gsb/uid3550/src/snapshot.c",
+  "file": "/home/cat/gsb/uid3550/src/snapshot.c",
+  "output": "src/CMakeFiles/box2d.dir/snapshot.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/solver_set.c.o -c /home/cat/gsb/uid3550/src/solver_set.c",
+  "file": "/home/cat/gsb/uid3550/src/solver_set.c",
+  "output": "src/CMakeFiles/box2d.dir/solver_set.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/solver.c.o -c /home/cat/gsb/uid3550/src/solver.c",
+  "file": "/home/cat/gsb/uid3550/src/solver.c",
+  "output": "src/CMakeFiles/box2d.dir/solver.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/table.c.o -c /home/cat/gsb/uid3550/src/table.c",
+  "file": "/home/cat/gsb/uid3550/src/table.c",
+  "output": "src/CMakeFiles/box2d.dir/table.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/timer.c.o -c /home/cat/gsb/uid3550/src/timer.c",
+  "file": "/home/cat/gsb/uid3550/src/timer.c",
+  "output": "src/CMakeFiles/box2d.dir/timer.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/types.c.o -c /home/cat/gsb/uid3550/src/types.c",
+  "file": "/home/cat/gsb/uid3550/src/types.c",
+  "output": "src/CMakeFiles/box2d.dir/types.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/weld_joint.c.o -c /home/cat/gsb/uid3550/src/weld_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/weld_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/weld_joint.c.o"
+},
+{
+  "directory": "/home/cat/gsb/uid3550/work/base_build/src",
+  "command": "/usr/bin/cc  -I/home/cat/gsb/uid3550/src/../include -I/home/cat/gsb/uid3550/work/base_build/src -I/home/cat/gsb/uid3550/src -O3 -DNDEBUG -std=gnu17 -fvisibility=hidden -ffp-contract=off -Wmissing-prototypes -Wall -Wextra -pedantic -Wno-unused-value -o CMakeFiles/box2d.dir/wheel_joint.c.o -c /home/cat/gsb/uid3550/src/wheel_joint.c",
+  "file": "/home/cat/gsb/uid3550/src/wheel_joint.c",
+  "output": "src/CMakeFiles/box2d.dir/wheel_joint.c.o"
+}
+]

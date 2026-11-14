@@ -130,6 +130,42 @@ b2DynamicTree* b2CreateDynamicTree( int proxyCapacity )
 	return tree;
 }
 
+static void b2BuildTree( b2DynamicTree* tree, int leafCount );
+
+// Ensure the scratch storage used by the bottom-up builder is large enough for leafCount leaves.
+static void b2EnsureRebuildStorage( b2DynamicTree* tree, int leafCount )
+{
+	if ( tree->swapNodes == NULL )
+	{
+		tree->swapNodes = b2AllocZero( tree->nodeCapacity * sizeof( b2TreeNode ) );
+	}
+
+	if ( leafCount <= tree->rebuildCapacity )
+	{
+		return;
+	}
+
+	int oldCapacity = tree->rebuildCapacity;
+	int newCapacity = leafCount + leafCount / 2;
+
+	b2Free( tree->leafIndices, oldCapacity * sizeof( int32_t ) );
+	tree->leafIndices = (int32_t*)b2Alloc( newCapacity * sizeof( int32_t ) );
+
+	b2Free( tree->leafNodes, oldCapacity * sizeof( b2TreeNode ) );
+	tree->leafNodes = (b2TreeNode*)b2Alloc( newCapacity * sizeof( b2TreeNode ) );
+
+#if B2_TREE_HEURISTIC == 0
+	b2Free( tree->leafCenters, oldCapacity * sizeof( b2Vec2 ) );
+	tree->leafCenters = (b2Vec2*)b2Alloc( newCapacity * sizeof( b2Vec2 ) );
+#else
+	b2Free( tree->leafBoxes, oldCapacity * sizeof( b2AABB ) );
+	tree->leafBoxes = (b2AABB*)b2Alloc( newCapacity * sizeof( b2AABB ) );
+	b2Free( tree->binIndices, oldCapacity * sizeof( int32_t ) );
+	tree->binIndices = (int32_t*)b2Alloc( newCapacity * sizeof( int32_t ) );
+#endif
+	tree->rebuildCapacity = newCapacity;
+}
+
 void b2DestroyDynamicTree( b2DynamicTree* tree )
 {
 	if ( tree == NULL )
@@ -597,6 +633,109 @@ int b2CreateTreeProxyInternal( b2DynamicTree* tree, b2AABB aabb, uint64_t catego
 int b2CreateTreeProxy( b2DynamicTree* tree, b2AABB aabb, uint64_t categoryBits, uint64_t userData )
 {
 	return b2CreateTreeProxyInternal( tree, aabb, categoryBits, userData, false );
+}
+
+void b2DynamicTree_BulkCreate( b2DynamicTree* tree, const b2AABB* boxes, int count, int* outProxyIds )
+{
+	B2_ASSERT( tree->proxyCount == 0 && b2IsEmptyNode( tree->nodes + B2_ROOT_NODE ) );
+	B2_ASSERT( 0 < count );
+
+	// Allocate all proxies up front so their ids form a dense, order-preserving pool.
+	for ( int i = 0; i < count; ++i )
+	{
+		int proxyId = b2AllocateProxy( tree );
+		b2TreeProxy* proxy = tree->proxies + proxyId;
+		proxy->categoryBits = 1;
+		proxy->userData = (uint64_t)i;
+		outProxyIds[i] = proxyId;
+	}
+
+	b2EnsureRebuildStorage( tree, count );
+
+	int* leafIndices = tree->leafIndices;
+	b2TreeNode* leaves = tree->leafNodes;
+#if B2_TREE_HEURISTIC == 0
+	b2Vec2* leafCenters = tree->leafCenters;
+#else
+	b2AABB* leafBoxes = tree->leafBoxes;
+#endif
+
+	// Every input box is a build leaf. A bulk load is not a movement, so the moved flag stays clear.
+	for ( int i = 0; i < count; ++i )
+	{
+		int proxyId = outProxyIds[i];
+		leafIndices[i] = i;
+		leaves[i] = b2MakeLeafNode( boxes[i], proxyId, (uint64_t)i, false );
+#if B2_TREE_HEURISTIC == 0
+		leafCenters[i] = b2AABB_Center( boxes[i] );
+#else
+		leafBoxes[i] = boxes[i];
+#endif
+	}
+
+	// b2BuildTree writes the dense hierarchy into the swap array and links every proxy node.
+	b2BuildTree( tree, count );
+
+	B2_SWAP( tree->nodes, tree->swapNodes );
+	tree->pairFreeList = B2_NULL_INDEX;
+	tree->dfsOrdered = true;
+
+	b2DynamicTree_Validate( tree );
+}
+
+void b2DynamicTree_BulkRebuild( b2DynamicTree* tree )
+{
+	int count = tree->proxyCount;
+	if ( count == 0 )
+	{
+		return;
+	}
+
+	b2EnsureRebuildStorage( tree, count );
+
+	int* leafIndices = tree->leafIndices;
+	b2TreeNode* leaves = tree->leafNodes;
+#if B2_TREE_HEURISTIC == 0
+	b2Vec2* leafCenters = tree->leafCenters;
+#else
+	b2AABB* leafBoxes = tree->leafBoxes;
+#endif
+
+	// Reuse each live proxy's current leaf box and identity. Proxy ids stay stable, which keeps
+	// every shape->proxyKey valid. A rebuild clears the moved flags, matching b2DynamicTree_Rebuild.
+	int leafCount = 0;
+	for ( int proxyId = 0; proxyId < tree->proxyCapacity; ++proxyId )
+	{
+		int nodeIndex = tree->proxies[proxyId].node;
+		if ( nodeIndex == B2_NULL_INDEX )
+		{
+			continue;
+		}
+
+		b2TreeNode leaf = tree->nodes[nodeIndex];
+		B2_ASSERT( b2IsLeaf( &leaf ) && b2GetProxyId( &leaf ) == proxyId );
+		leaf.flagIndex &= ~B2_MOVED_NODE;
+
+		leafIndices[leafCount] = leafCount;
+		leaves[leafCount] = leaf;
+#if B2_TREE_HEURISTIC == 0
+		leafCenters[leafCount] = b2AABB_Center( leaf.aabb );
+#else
+		leafBoxes[leafCount] = leaf.aabb;
+#endif
+		leafCount += 1;
+	}
+
+	B2_ASSERT( leafCount == count );
+
+	b2BuildTree( tree, leafCount );
+
+	B2_SWAP( tree->nodes, tree->swapNodes );
+	tree->pairFreeList = B2_NULL_INDEX;
+	tree->dfsOrdered = true;
+
+	b2DynamicTree_Validate( tree );
+	b2DynamicTree_ValidateNoMoved( tree );
 }
 
 void b2DestroyTreeProxy( b2DynamicTree* tree, int proxyId )

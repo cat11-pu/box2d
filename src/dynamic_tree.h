@@ -187,6 +187,17 @@ int b2CreateTreeProxyInternal( b2DynamicTree* tree, b2AABB aabb, uint64_t catego
 void b2DynamicTree_MoveProxyInternal( b2DynamicTree* tree, int proxyId, b2AABB aabb, bool markMoved );
 void b2DynamicTree_EnlargeProxy( b2DynamicTree* tree, int proxyId, b2AABB aabb );
 
+/// Bulk load many proxies into an empty tree in one bottom-up build. The leaf set and every
+/// query result are identical to inserting the proxies one at a time, but the hierarchy is
+/// built balanced and cache friendly with O(n log n) total cost. Proxy ids are written to
+/// outProxyIds in the same order as the input boxes. The tree must be empty.
+void b2DynamicTree_BulkCreate( b2DynamicTree* tree, const b2AABB* boxes, int count, int* outProxyIds );
+
+/// Rebuild the tree in one bottom-up bulk build using the current live proxies. Proxy ids and
+/// user data are preserved, so every shape keeps the same broad-phase key. Query results are
+/// unchanged; only the hierarchy layout (and therefore traversal cost) differs.
+void b2DynamicTree_BulkRebuild( b2DynamicTree* tree );
+
 /// Rebuild the tree while retaining subtrees that haven't changed. Returns the number of boxes sorted.
 int b2DynamicTree_Rebuild( b2DynamicTree* tree, bool fullBuild );
 

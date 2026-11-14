@@ -31,6 +31,10 @@ typedef struct b2BroadPhase
 
 	// Tracks shape pairs that have a b2Contact
 	b2HashSet pairSet;
+
+	// The static tree is bulk rebuilt once before its first use to turn serial proxy
+	// insertions into a balanced, cache-friendly hierarchy without changing any proxy keys.
+	bool staticTreeNeedsBulkBuild;
 } b2BroadPhase;
 
 void b2CreateBroadPhase( b2BroadPhase* bp, const b2Capacity* capacity );
