@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/cat/gsb/uid3552/build-o0/cmake_install.cmake",
+		"/home/cat/gsb/uid3552/build-o0/src/cmake_install.cmake",
+		"/home/cat/gsb/uid3552/build-o0/shared/cmake_install.cmake",
+		"/home/cat/gsb/uid3552/build-o0/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
